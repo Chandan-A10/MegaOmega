@@ -1,0 +1,316 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AROUND THE WORLD</title>
+	<!-- <link rel="stylesheet" href="world.css"> -->
+    <style>
+        *
+{
+	margin:0;
+	padding:0;
+	font-family:'roboto',sans-serif;
+}
+.card h5
+{
+	color:#009688;
+	font-size:16px;
+}
+.page/*css for background-image*/
+{
+	width:100%;
+	height:100vh;
+	background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url("IMG-20210321-WA0010.jpg");
+	background-size:cover;
+	background-position:center;
+}
+.navigation/*css for navigation bar*/
+{
+	width:85%;
+	margin:auto;
+	padding:35px 0;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+}
+.nav/*css for <h2>Navigation</h2>*/
+{
+	width:120px;
+	cursor:pointer;
+	color:#fff;
+}
+.navigation ul li/*css for navigation list*/
+{
+	list-style:none;
+	display:inline-block;
+	margin:0 20px;
+	position:relative;
+}
+.navigation ul li a/*css for navigation links*/
+{
+	text-decoration:none;
+	color:#fff;
+	text-transform:uppercase;
+}
+.navigation ul li::after/*css for navigation link underline with width 0*/
+{
+	content:'';
+	height:3px;
+	width:0;
+	background:#009688;
+	position:absolute;
+	left:0;
+	bottom:-10;
+	transition:0.5s;
+}
+.navigation ul li:hover::after/*css for navigation link underline with width 100% on hover*/
+{
+	width:100%;
+	
+}
+.body/*css for heading,p and button div*/
+{
+	width:100%;
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+	text-align:center;
+	color:#fff;
+}
+.body h1/*css for ATW heading*/
+{
+	font-size:70px;
+	margin-top:80px;
+}
+.body p/*css for slogan*/
+{
+	margin:20px auto;
+	font-weight:100;
+	line-height:25px;
+}
+button/*css for button*/
+{
+	width:200px;
+	padding:15px 0;
+	text-align:center;
+	margin:20px 10px;
+	border-radius:25px;
+	font-weight:bold;
+	border:2px solid #009688;
+	background:transparent;
+	color:#fff;
+	cursor:pointer;
+	position:relative;
+	overflow:hidden;
+}
+span/*css appling color background to button with width 0*/
+{
+	background:#009688;
+	height:100%;
+	width:0;
+	border-radius:25px;
+	position:absolute;
+	left:0;
+	bottom:0;
+	z-index:-1;
+	transition:0.5s;
+}
+button:hover span/*css appling color background to button with width 100% on hover*/
+{
+	width:100%;
+}
+button:hover/*css border vanish on button hover*/
+{
+	border:none;
+}
+.heading
+{
+	width:100%;
+	height:100vh;
+	background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("IMG-20210321-WA0010.jpg");
+	background-position:center;
+	background-size:cover;
+	padding-left:16%;
+	padding-right:8%;
+	box-sizing:border-box;
+	display:flex;
+	height:100%;
+	align-items:center;
+	overflow:hidden;
+}
+#a1
+{
+	border:1px solid #fff;
+	text-align:center;
+	height:50%;
+}
+#a2
+{
+	padding:5% 0% 0% 15%;
+}
+#a3
+{
+	color:#fff;
+	height:70%;
+	border:1px solid #fff;
+	border-collapse:collapse;
+	text-align:center;
+}
+#a3 a
+{
+	background-color:none;
+	text-decoration:none;
+	border:4px solid #008cba;
+	color:#008cba;
+	padding:15px 32px;
+	text-align:center;
+	display:inline-block;
+	font-size:16px;
+	transition:0.2s;
+}
+#a3 a:hover
+{
+	background-color:#008cba;
+	color:#fff;
+}
+.heading p
+{
+	color:#fff;
+}
+.col
+{
+	flex-basis:50%;
+}
+h1
+{
+	color:#fff;
+	font-size:90px;
+	text-align:center;
+}
+.card
+{
+	width:200px;
+	height:230px;
+	display:inline-block;
+	border-radius:10px;
+	padding:15px 25px;
+	box-sizing:border-box;
+	cursor:pointer;
+	margin:10px 15px;
+	background-position:center;
+	background-size:cover;
+	transition:0.5s;
+}
+#n1
+{
+	background-color:black;
+	height:50vh;
+	overflow:auto;
+}
+#n2
+{
+	padding:2.5%;
+	margin-left:17%;
+}
+.card a
+{
+	text-decoration:none;
+	font-size:20px;
+	color:#009688;
+}
+.image1
+{
+	background-image:url("IMG-20210321-WA0002.jpg");
+}
+.image2
+{
+	background-image:url("IMG-20210321-WA0002.jpg");
+}.image3
+{
+	background-image:url("IMG-20210321-WA0002.jpg");
+}.image4
+{
+	background-image:url("IMG-20210321-WA0002.jpg");
+}
+.card:hover
+{
+	transform:translateY(-10px);
+	box-shadow:0px 4px 5px #fff;
+}
+.footer
+{
+	display:flex;
+	height:88%;
+	align-items:center;
+	width:100%;
+	height:60vh;
+	background:#000;
+	padding-left:8%;
+	padding-right:8%;
+	box-sizing:border-box;
+}
+.footer ul li
+{
+	list-style:none;
+	display:inline-block;
+	margin:0 20px;
+	position:relative;
+}
+.footer ul li a
+{
+	text-decoration:none;
+	color:#fff;
+	text-transform:uppercase;
+}
+.footer ul li::after
+{
+	content:'';
+	height:3px;
+	width:0;
+	background:#009688;
+	position:absolute;
+	left:0;
+	bottom:-10;
+	transition:0.5s;
+}
+.footer ul li:hover::after
+{
+	width:100%;
+	
+}
+.footer h6
+{
+	color:#fff;
+}
+.white
+{
+	width:50%;
+	border-radius:10px;
+	background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("IMG-20210321-WA0010.jpg");
+	border:3px solid #fff;
+}
+    </style>
+</head>
+<body>
+	<div class="page"><!--div containing complete page1-->
+		<div class="navigation"><!--div containing navigation bar-->
+			<h3 class="nav">MegaOmega</h3>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About us</a></li>
+				<li><a href="#">Apps</a></li>
+				<li><a href="#">Recommendations</a></li>
+				<li><a href="#">Connect</a></li>
+			</ul>
+		</div>
+			<div class="body">
+				<h1>Lets, Explore</h1>
+				<p>"Explore beyond your thoughts"</p>
+				<div>
+					<a href="TravelGyan.html"><button type="button"><span></span>Next</button></a><!--button to home page-->
+					<a href="TravelGyan.html"><button type="button"><span></span>TRAVEL GYAN</button></a><!--button to travel gyan page-->
+				</div>
+			</div>
+		</div>
+	
+</body>
+</html>
