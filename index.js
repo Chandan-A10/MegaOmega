@@ -6,6 +6,7 @@ const path=require('path')
 const session=require('express-session');
 const cookieParser=require('cookie-parser');
 const oneDay=100*60*60*24
+
 app.use(session({
     secret:"Cookie",
     resave:false,
@@ -27,34 +28,29 @@ app.get('/login',(req,res)=>{
 })
 
 app.post('/login',(req,res)=>{
-    let dataJson='';
     let flag=true;
     if(req.body.username.length<5 || req.body.password.length<5 || req.body.password!=req.body.confirmpassword){
         res.render('login',{message:"Invalid username or password"})
     }
     else{
-        fs.readFile("./data.json","utf-8",(err,data)=>{
-            if(err){
-                res.end("error")
-            }
-            else{
-                dataJson=JSON.parse(data);
-                dataJson.forEach(x => {
-                    if(x.username==req.body.username){
-                        res.render("login",{message:"Username Unavailable"});
-                    }
-                    else{
-                        let obj={
-                            username:req.body.username,
-                            password:req.body.password
-                        }
-                        dataJson.push(obj)
-                        fs.writeFile("./data.json",JSON.stringify(dataJson),(err)=>{if(err){res.end("error")}})
-                        res.redirect("/home");
-                    }
-                });
+        userData.forEach(x=>{
+            if(x.username==req.body.username){
+                flag=false
+                return;
             }
         })
+        if(flag){
+            let obj={
+                username:req.body.username,
+                password:req.body.password
+            }
+            userData.push(obj)
+            fs.writeFile("./data.json",JSON.stringify(userData),(err)=>{if(err){return}})
+            res.redirect('/')
+        }
+        else{
+            res.render('login',{message:"Username Unavailable"})
+        }
     }
 })
 
