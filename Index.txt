@@ -1,0 +1,7 @@
+MegaOmega -> Returns to Homepage;
+Home -> Returns to Homepage;
+About just-> redirect to about us page;
+Apps-> Reminder list, MG chat, latest news,
+Recommendation->
+Connect->redirect to connect page (discord, insta , email);
+search bar-> search for specific topic;

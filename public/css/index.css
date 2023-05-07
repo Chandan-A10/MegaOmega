@@ -1,0 +1,119 @@
+*{
+	margin:0;
+	padding:0;
+	font-family:'roboto',sans-serif;
+}
+.page/*css for background-image*/
+{
+	width:100%;
+	height:100vh;
+	background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url("/img/bg.jpg");
+	background-size:cover;
+	background-position:center;
+}
+.navigation/*css for navigation bar*/
+{
+	width:85%;
+	margin:auto;
+	padding:35px 0;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+}
+.nav/*css for <h2>Navigation</h2>*/
+{
+	width:120px;
+	cursor:pointer;
+	color:#fff;
+}
+.navigation ul li/*css for navigation list*/
+{
+	list-style:none;
+	display:inline-block;
+	margin:0 20px;
+	position:relative;
+}
+.navigation ul li a/*css for navigation links*/
+{
+	text-decoration:none;
+	color:#fff;
+	text-transform:uppercase;
+}
+.navigation ul li::after/*css for navigation link underline with width 0*/
+{
+	content:'';
+	height:3px;
+	width:0;
+	background:#009688;
+	position:absolute;
+	left:0;
+	bottom:-10;
+	transition:0.5s;
+}
+.navigation ul li:hover::after/*css for navigation link underline with width 100% on hover*/
+{
+	width:100%;
+	
+}
+.body/*css for heading,p and button div*/
+{
+	width:100%;
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+	text-align:center;
+	color:#fff;
+}
+.body h1/*css for ATW heading*/
+{
+	font-size:100px;
+	margin-top:80px;
+}
+.body p/*css for slogan*/
+{
+	margin:20px auto;
+	font-weight:100;
+	line-height:15px;
+}
+button/*css for button*/
+{
+	width:200px;
+	padding:15px 0;
+	text-align:center;
+	margin:20px 10px;
+	border-radius:25px;
+	font-weight:bold;
+	border:2px solid #009688;
+	background:transparent;
+	color:#fff;
+	cursor:pointer;
+	position:relative;
+	overflow:hidden;
+}
+span/*css appling color background to button with width 0*/
+{
+	background:#009688;
+	height:100%;
+	width:0;
+	border-radius:25px;
+	position:absolute;
+	left:0;
+	bottom:0;
+	z-index:-1;
+	transition:0.5s;
+}
+button:hover span/*css appling color background to button with width 100% on hover*/
+{
+	width:100%;
+}
+button:hover/*css border vanish on button hover*/
+{
+	border:none;
+	background-color:#009688
+}
+h1
+{
+	color:white;
+	font-size:90px;
+	text-align:center;
+}

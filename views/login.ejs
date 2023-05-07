@@ -1,0 +1,26 @@
+<html>
+<head>
+    <link rel="stylesheet" href="./css/login.css">
+    
+</head>
+<body>
+    <div class="container">
+    <form action="/login" method="post">
+        <h2>Login</h2>
+        <div class="input-field">
+            <input type="text" name="username" id="username" placeholder="Enter Username">
+        </div>
+        <div class="input-field">
+            <input type="password" name="password" id="password" placeholder="Enter Password">
+        </div>
+        <div class="input-field">
+            <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Enter Password again">
+        </div>
+        <% if(message!=''){
+            %><p id="error"><%= message %></p><%
+        }%>
+        <input type="submit" value="LogIn" class="button1">
+    </form>
+    </div>
+</body>
+</html>
