@@ -1,26 +1,36 @@
 <html>
 <head>
     <link rel="stylesheet" href="./css/login.css">
-    
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <div class="container">
-    <form action="/login" method="post">
-        <h2>Login</h2>
-        <div class="input-field">
-            <input type="text" name="username" id="username" placeholder="Enter Username">
-        </div>
-        <div class="input-field">
-            <input type="password" name="password" id="password" placeholder="Enter Password">
-        </div>
-        <div class="input-field">
-            <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Enter Password again">
-        </div>
-        <% if(message!=''){
-            %><p id="error"><%= message %></p><%
-        }%>
-        <input type="submit" value="LogIn" class="button1">
-    </form>
+    <div class="page"><!--div containing complete page1-->
+		<div class="navigation"><!--div containing navigation bar-->
+			<h3 class="nav">MegaOmega</h3>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/app">Apps</a></li>
+				<li><a href="/about">About us</a></li>
+				<li><a href="/connect">Connect</a></li>
+			</ul>
+		</div>
+    <div class="login-box">
+        <form action="/login" method="post">
+            <h2 id="h1">Login</h2>
+                <div class="user-box"> 
+                    <input type="text" name="username" id="username" required="" autocomplete="off">
+                    <label>Username</label>
+                </div>
+                    <div class="user-box">
+                    <input type="password" name="password" id="password" required="">
+                    <label>Password</label>
+                </div>
+                <% if(message!=''){
+                    %><p id="error"><%= message %></p><%
+                }%>
+                <input type="submit" value="Login">
+        </form>
+    </div>
     </div>
 </body>
 </html>

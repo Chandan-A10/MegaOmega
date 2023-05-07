@@ -23,14 +23,14 @@ app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 app.set("view engine","ejs")
 
-app.get('/login',(req,res)=>{
-    res.render("login",{message:""});
+app.get('/signup',(req,res)=>{
+    res.render("signup",{message:""});
 })
 
-app.post('/login',(req,res)=>{
+app.post('/signup',(req,res)=>{
     let flag=true;
     if(req.body.username.length<5 || req.body.password.length<5 || req.body.password!=req.body.confirmpassword){
-        res.render('login',{message:"Invalid username or password"})
+        res.render('signup',{message:"Invalid username or password"})
     }
     else{
         userData.forEach(x=>{
@@ -49,7 +49,7 @@ app.post('/login',(req,res)=>{
             res.redirect('/')
         }
         else{
-            res.render('login',{message:"Username Unavailable"})
+            res.render('signup',{message:"Username Unavailable"})
         }
     }
 })
@@ -60,19 +60,24 @@ app.get('/logout',(req,res)=>{
 })
 
 
-app.get('/signup',(req,res)=>{
-    res.render('signup',{message:''})
+app.get('/login',(req,res)=>{
+    res.render('login',{message:''})
 })
 
-app.post('/signup',(req,res)=>{
+app.post('/login',(req,res)=>{
+    let flag=false;
     userData.forEach(x=>{
         if(x.username==req.body.username && x.password==req.body.password){
-            res.end("Success")
-        }
-        else{
-            res.render("signup",{message:"Inavlid Username or Password"})
+            flag=true;
+            return;
         }
     })
+    if(flag){
+        res.end('success')
+    }
+    else{
+        res.render("login",{message:"Inavlid Username or Password"})
+    }
 })
 
 app.use("/css",express.static('./public/css'))

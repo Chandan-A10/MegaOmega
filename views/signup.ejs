@@ -1,20 +1,40 @@
 <html>
 <head>
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <form action="/signup" method="post">
-        <h2>SignUp</h2>
-        <div class="input-field">
-            <input type="text" name="username" id="username" placeholder="Enter Username">
-        </div>
-        <div class="input-field">
-            <input type="password" name="password" id="password" placeholder="Enter Password">
-        </div>
-        <% if(message!=''){
-            %><p id="error"><%= message %></p><%
-        }%>
-        <input type="submit" value="SignUp">
-    </form>
+    <div class="page"><!--div containing complete page1-->
+		<div class="navigation"><!--div containing navigation bar-->
+			<h3 class="nav">MegaOmega</h3>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/app">Apps</a></li>
+				<li><a href="/about">About us</a></li>
+				<li><a href="/connect">Connect</a></li>
+			</ul>
+		</div>
+    <div class="login-box">
+        <form action="/signup" method="post">
+            <h2 id="h1">Create Account</h2>
+                <div class="user-box"> 
+                    <input type="text" name="username" id="username" required="" autocomplete="off">
+                    <label>Username</label>
+                </div>
+                    <div class="user-box">
+                    <input type="password" name="password" id="password" required="">
+                    <label>Password</label>
+                </div>
+                <div class="user-box"> 
+                    <input type="text" name="confirmpassword" id="confirmpassword" required="">
+                    <label>Confirm Password</label>
+                </div>
+                <% if(message!=''){
+                    %><p id="error"><%= message %></p><%
+                }%>
+                <input type="submit" value="Create">
+        </form>
+    </div>
+    </div>
 </body>
 </html>
