@@ -117,3 +117,31 @@ h1
 	font-size:90px;
 	text-align:center;
 }
+#app-cards{
+	height: 80%;
+	width: 95%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content:space-evenly;
+}
+.app-card{
+	height: 300px;
+	width: 300px;
+	box-sizing: border-box;
+    box-shadow: 0px 0px 30px #75079e;
+	border: 5px solid darkmagenta;
+	border-radius: 50px;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.app-img{
+	height: 200px;
+	width: 200px;
+}
+.app-links{
+	text-decoration: none;
+}

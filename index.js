@@ -16,7 +16,7 @@ app.use(session({
     }
 }))
 app.get('/test',(req,res)=>{
-    res.sendFile(__dirname+"/index.html")
+    res.sendFile(__dirname+"/public/app.html")
 })
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -78,6 +78,9 @@ app.post('/login',(req,res)=>{
     else{
         res.render("login",{message:"Inavlid Username or Password"})
     }
+})
+app.get('/app',(req,res)=>{
+    res.sendFile(__dirname+'/public/app.html');
 })
 
 app.use("/css",express.static('./public/css'))
